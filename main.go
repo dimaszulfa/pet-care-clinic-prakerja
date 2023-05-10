@@ -9,6 +9,47 @@ import (
 	_ "github.com/lib/pq"
 )
 
+type Pet struct {
+	Id     int    `json:"id"`
+	Name   string `json:"name"`
+	Type   string `json:"type"`
+	Age    string `json:"age"`
+	Breed  string `json:"breed"`
+	Owner  string `json:"owner"`
+	Weight string `json:"weight"`
+	Color  string `json:"color"`
+}
+
+type Owner struct {
+	Id        int    `json:"id"`
+	Name      string `json:"name"`
+	Address   string `json:"address"`
+	Telephone string `json:"telephone"`
+	Email     string `json:"email"`
+}
+
+type Service struct {
+	Id          int    `json:"id"`
+	Name        string `json:"name"` //medical checkup,vaccine, operation
+	Description string `json:"description"`
+	Price       string `json:"price"`
+}
+
+type Reservation struct {
+	Id      int    `json:"id"`
+	Date    string `json:"date"` //medical checkup,vaccine, operation
+	Time    string `json:"time"`
+	Pet     string `json:"pet"`
+	Service string `json:"service"`
+}
+
+type Payment struct {
+	Id             int    `json:"id"`
+	Reservation    string `json:"reservation"` //medical checkup,vaccine, operation
+	Price          string `json:"price"`
+	Payment_Method string `json:"payment_method"`
+}
+
 type BaseResponse struct {
 	Status  bool        `json:"true"`
 	Message string      `json:"message"`
